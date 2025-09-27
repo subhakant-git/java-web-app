@@ -20,8 +20,10 @@ phases:
       - echo "Build completed. Preparing artifact for Elastic Beanstalk"
       # Rename the WAR file to ROOT.war for Elastic Beanstalk Tomcat deployments
       - mkdir -p target/deploy
-      - cp target/*.war ROOT.war
+      - cp target/*.war target/ROOT.war
 
 artifacts:
   files:
     - ROOT.war
+  discard-paths: yes
+  base-directory: ./target
