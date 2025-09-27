@@ -20,9 +20,8 @@ phases:
       - echo "Build completed. Preparing artifact for Elastic Beanstalk"
       # Rename the WAR file to ROOT.war for Elastic Beanstalk Tomcat deployments
       - mkdir -p target/deploy
-      - cp target/*.war target/deploy/ROOT.war
-      - cd target/deploy && zip -r ../../elasticbeanstalk-app.zip ROOT.war && cd ../..
+      - cp target/*.war ROOT.war
 
 artifacts:
   files:
-    - elasticbeanstalk-app.zip
+    - ROOT.war
